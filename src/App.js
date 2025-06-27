@@ -4,6 +4,16 @@ import Header from './components/Header';
 function App() {
   const [count, setCount] = useState(0);
 
+  // Define the test function that throws an error
+  const test = () => {
+    // This will throw an error when the button is clicked
+    throw new Error('This is an intentional error for testing purposes');
+    // Could also use:
+    // console.log(undefinedVariable); // ReferenceError
+    // or:
+    // null.someProperty; // TypeError
+  };
+
   return (
     <div className="app">
       <Header title="Sample Web Application" />
@@ -15,7 +25,7 @@ function App() {
           <p>Count: {count}</p>
           <button onClick={() => setCount(count + 1)}>Increment</button>
           <button onClick={() => setCount(count - 1)}>Decrement</button>
-          <button onClick={() => test()}>Errro</button>
+          <button onClick={() => test()}>Error Test</button>
         </div>
       </main>
     </div>
